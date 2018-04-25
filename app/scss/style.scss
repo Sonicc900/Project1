@@ -1,0 +1,55 @@
+$height: 100px;
+$header: 1400px;
+$width: 50px;
+@mixin box($color, $bg){
+    color: $color;
+    background-color: $bg;
+    
+&:hover{
+    color: $bg;
+    background-color: $color;
+    }
+    
+}
+body{
+margin: 0px;
+padding: 0px;
+}
+.header{
+    margin: 0px;
+ height: $height;
+width: 100%;
+background-color: black;
+ position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+&-box{
+    width: $width;
+    height: $width;
+     @include box(red, yellow);
+  animation: box-anim 2s infinite ease-in-out;
+}
+}
+@keyframes box-anim{
+    0%{
+      transform:perspective(120px) rotateX(0deg) rotateY(0deg);
+         
+    }
+    25%{ transform:perspective(120px) rotateX(90deg) rotateY(0deg)
+       
+}
+    50%{transform:perspective(120px) rotateX(180deg) rotateY(0deg)
+        
+        
+    }
+    75%{transform:perspective(120px) rotateX(0deg) rotateY(90deg)
+        
+        
+    }
+    100%{transform:perspective(120px) rotateX(0deg) rotateY(180deg)
+        
+    }
+}
+
+
