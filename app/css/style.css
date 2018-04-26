@@ -2,24 +2,68 @@ body {
   margin: 0px;
   padding: 0px; }
 
-.header {
-  margin: 0px;
+.container {
   height: 100px;
+  width: 100px;
+  background-color: black;
+  position: relative; }
+
+.cont {
+  margin: 0px;
+  height: 150px;
   width: 100%;
   background-color: black;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .cont-rekt, .cont-rekt1 {
+    width: 15px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    animation: rekt-anim 2s infinite ease-in-out; }
+  .cont-rekt1 {
+    animation-delay: -1s; }
+
+.header {
+  margin: 0px;
+  height: 150px;
+  width: 100%;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center; }
   .header-box {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     color: red;
     background-color: yellow;
     animation: box-anim 2s infinite ease-in-out; }
     .header-box:hover {
       color: yellow;
       background-color: red; }
+
+@keyframes rekt-anim {
+  0% {
+    left: 0px;
+    top: 0px;
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg); }
+  25% {
+    left: 50px;
+    top: 0px;
+    transform: perspective(120px) rotateX(90deg) rotateY(0deg); }
+  50% {
+    left: 50px;
+    top: 50px;
+    transform: perspective(120px) rotateX(-90deg) rotateY(45deg); }
+  75% {
+    left: 0px;
+    top: 50px;
+    transform: perspective(120px) rotateX(45deg) rotateY(90deg); }
+  100% {
+    left: 0px;
+    top: 0px;
+    transform: perspective(120px) rotateX(45deg) rotateY(45deg); } }
 
 @keyframes box-anim {
   0% {

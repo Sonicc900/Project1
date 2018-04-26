@@ -1,6 +1,7 @@
-$height: 100px;
+$height: 150px;
 $header: 1400px;
-$width: 50px;
+$width: 30px;
+$hight: 15px;
 @mixin box($color, $bg){
     color: $color;
     background-color: $bg;
@@ -15,12 +16,43 @@ body{
 margin: 0px;
 padding: 0px;
 }
+.container{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+     position: relative;
+}
+
+.cont{
+      margin: 0px;
+     height: $height;
+    width: 100%;
+    background-color: black;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+   
+     
+   
+    &-rekt, &-rekt1{
+        width: $hight;
+        height: $width;
+        background-color:red;
+      
+        position: absolute;
+    animation: rekt-anim 2s infinite ease-in-out;
+    } 
+  &-rekt1{
+    animation-delay: -1s;
+}
+    
+}
 .header{
     margin: 0px;
- height: $height;
-width: 100%;
+     height: $height;
+    width: 100%;
 background-color: black;
- position: absolute;
+ 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +62,27 @@ background-color: black;
      @include box(red, yellow);
   animation: box-anim 2s infinite ease-in-out;
 }
+}
+
+@keyframes rekt-anim{
+    0%{left: 0px ;top: 0px;
+        transform:perspective(120px) rotateX(0deg) rotateY(0deg)   
+        
+    }
+    25%{left: 50px ;top: 0px;
+        transform:perspective(120px) rotateX(90deg) rotateY(0deg)
+    }
+    50%{left: 50px ;top: 50px;
+        transform:perspective(120px) rotateX(-90deg) rotateY(45deg)
+        
+    }
+    75%{left: 0px ;top: 50px;
+         transform:perspective(120px) rotateX(45deg) rotateY(90deg)
+    }
+    100%{left: 0px ;top: 0px;
+        transform:perspective(120px) rotateX(45deg) rotateY(45deg)        
+        
+    }
 }
 @keyframes box-anim{
     0%{
@@ -51,5 +104,14 @@ background-color: black;
         
     }
 }
+
+
+
+
+
+
+
+
+
 
 
